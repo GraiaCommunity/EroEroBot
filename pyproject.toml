@@ -3,6 +3,10 @@ name = "EroEroBot"
 version = "0.1.0"
 description = "GraiaX 社区文档示例 —— 大家最喜欢的涩图机器人"
 authors = ["Graiax-Community <example@graiax.cn>"]
+readme = "README.md"
+repository = "https://github.com/Graiax-Community/EroEroBot"
+homepage = "https://graiax.cn"
+documentation = "https://graiax.cn"
 
 [tool.poetry.dependencies]
 python = ">=3.9, <3.11"
