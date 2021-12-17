@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "EroEroBot"
+version = "0.1.0"
+description = "GraiaX 社区文档示例 —— 大家最喜欢的涩图机器人"
+authors = ["Graiax-Community <example@graiax.cn>"]
+
+[tool.poetry.dependencies]
+python = ">=3.9, <3.11"
+graia-ariadne = "^0.4.9"
+graia-broadcast = "^0.14.4"
+graiax-silkcoder = {extras = ["ffmpeg"], version = "^0.1.2"}
+
+[tool.poetry.dev-dependencies]
+black = ">=21.10b0"
+isort = { version = ">=5.9.3", extras = ["requirements_deprecated_finder"] }
+flake8 = "^4.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+target-version = ["py39", "py310"]
+safe = true
+
+[tool.isort]
+profile = "black"
+
+[[tool.poetry.source]]
+name = "tsinghua"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = true
+
+[[tool.poetry.source]]
+name = "aliyun"
+url = "https://mirrors.aliyun.com/pypi/simple/"
