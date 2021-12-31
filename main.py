@@ -5,18 +5,13 @@ import os
 import random
 from datetime import datetime
 
-import aiohttp
 from graia.ariadne.app import Ariadne
 from graia.ariadne.context import adapter_ctx
 from graia.ariadne.event.message import GroupMessage
 from graia.ariadne.event.mirai import NudgeEvent
 from graia.ariadne.message.chain import MessageChain
 from graia.ariadne.message.element import Forward, ForwardNode, Image, Voice
-
-# 包 graia.ariadne.message.parser.pattern 将在 Ariadne 0.5.0 标记为“弃用”
-# 并在 Ariadne 0.5.2 正式移除，届时请从 graia.ariadne.message.parser.twilight 导入
-from graia.ariadne.message.parser.pattern import FullMatch
-from graia.ariadne.message.parser.twilight import Sparkle, Twilight
+from graia.ariadne.message.parser.twilight import FullMatch, Sparkle, Twilight
 from graia.ariadne.model import Group, Member, MiraiSession
 from graiax import silkcoder
 
