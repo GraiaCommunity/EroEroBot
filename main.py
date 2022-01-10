@@ -62,10 +62,9 @@ async def hentai(app: Ariadne, group: Group):
 async def create_forward(app: Ariadne, group: Group, member: Member):
     forward_nodes = [
         ForwardNode(
-            target=member.id,
-            time=datetime.now(),
-            name=member.name,
-            message=MessageChain.create(Image(path=os.path.join("imgs", "huge_milk.jpg"))),
+            target=member,  # 发送者的信息(Member / Friend / Stranger 都行)
+            time=datetime.now(),  # 发送时间
+            message=MessageChain.create(Image(path=os.path.join("imgs", "huge_milk.jpg"))),  # 要发送的消息链
         )
     ]
     member_list = await app.getMemberList(group)
@@ -73,9 +72,8 @@ async def create_forward(app: Ariadne, group: Group, member: Member):
         random_member: Member = random.choice(member_list)
         forward_nodes.append(
             ForwardNode(
-                target=random_member.id,
+                target=random_member,
                 time=datetime.now(),
-                name=random_member.name,
                 message=MessageChain.create("好大的奶"),
             )
         )

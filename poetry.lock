@@ -178,7 +178,7 @@ reference = "tuna-tsinghua"
 
 [[package]]
 name = "charset-normalizer"
-version = "2.0.9"
+version = "2.0.10"
 description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
 category = "main"
 optional = false
@@ -307,11 +307,11 @@ reference = "tuna-tsinghua"
 
 [[package]]
 name = "graiax-silkcoder"
-version = "0.1.3"
+version = "0.1.4"
 description = "transform audio file to silk"
 category = "main"
 optional = false
-python-versions = ">=3.6,<4.0"
+python-versions = ">=3.6"
 
 [package.dependencies]
 imageio-ffmpeg = {version = "*", optional = true, markers = "extra == \"ffmpeg\""}
@@ -588,7 +588,7 @@ reference = "tuna-tsinghua"
 
 [[package]]
 name = "requests"
-version = "2.26.0"
+version = "2.27.1"
 description = "Python HTTP for Humans."
 category = "dev"
 optional = false
@@ -637,7 +637,7 @@ reference = "tuna-tsinghua"
 
 [[package]]
 name = "urllib3"
-version = "1.26.7"
+version = "1.26.8"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
 category = "dev"
 optional = false
@@ -717,8 +717,8 @@ reference = "tuna-tsinghua"
 
 [metadata]
 lock-version = "1.1"
-python-versions = ">=3.9, <3.11"
-content-hash = "8d8daffe813208575e76d8fb5602063f9681da6e6f35d56c6edd8fcb8fac5202"
+python-versions = ">=3.9, <4.0"
+content-hash = "472398e0001c03edd4b6889ce6eeefc2ed456d2f9f087f2a3fcfb5103795831e"
 
 [metadata.files]
 aiodns = [
@@ -952,8 +952,8 @@ cffi = [
     {file = "cffi-1.15.0.tar.gz", hash = "sha256:920f0d66a896c2d99f0adbb391f990a84091179542c205fa53ce5787aff87954"},
 ]
 charset-normalizer = [
-    {file = "charset-normalizer-2.0.9.tar.gz", hash = "sha256:b0b883e8e874edfdece9c28f314e3dd5badf067342e42fb162203335ae61aa2c"},
-    {file = "charset_normalizer-2.0.9-py3-none-any.whl", hash = "sha256:1eecaa09422db5be9e29d7fc65664e6c33bd06f9ced7838578ba40d58bdf3721"},
+    {file = "charset-normalizer-2.0.10.tar.gz", hash = "sha256:876d180e9d7432c5d1dfd4c5d26b72f099d503e8fcc0feb7532c9289be60fcbd"},
+    {file = "charset_normalizer-2.0.10-py3-none-any.whl", hash = "sha256:cb957888737fc0bbcd78e3df769addb41fd1ff8cf950dc9e7ad7793f1bf44455"},
 ]
 click = [
     {file = "click-8.0.3-py3-none-any.whl", hash = "sha256:353f466495adaeb40b6b5f592f9f91cb22372351c84caeb068132442a4518ef3"},
@@ -1053,13 +1053,8 @@ graia-broadcast = [
     {file = "graia_broadcast-0.14.5-py3-none-any.whl", hash = "sha256:d9cb6caf249b6c0e207845d5c99529145a385fabadf5f3af02af387dfe3d6b28"},
 ]
 graiax-silkcoder = [
-    {file = "graiax-silkcoder-0.1.3.tar.gz", hash = "sha256:85f5f0bc76712fd63a8895f3b17bc500772fc18614567e6f1eeb38eeb04aa74b"},
-    {file = "graiax_silkcoder-0.1.3-cp310-cp310-win32.whl", hash = "sha256:04c5b37be9251ab524891c881f37b1309213db773c97f982b4d82d63a84f0a88"},
-    {file = "graiax_silkcoder-0.1.3-cp310-cp310-win_amd64.whl", hash = "sha256:8cdcddd96ae610710c36063b98c865e6f243d59dfb9f33593c465c49cd9b25ea"},
-    {file = "graiax_silkcoder-0.1.3-cp38-cp38-win32.whl", hash = "sha256:b5c91935080db65090465459a9d177b055e6bc03b2fa64f16b66be754dd315ed"},
-    {file = "graiax_silkcoder-0.1.3-cp38-cp38-win_amd64.whl", hash = "sha256:53a920399c704919e4bf985ce3ce1f435db8df548c97198f2748bc651cb7c179"},
-    {file = "graiax_silkcoder-0.1.3-cp39-cp39-win32.whl", hash = "sha256:527b90ec5c5a35b8a6cc0b548cd2602d9016cce4353e26ca9635d31940901381"},
-    {file = "graiax_silkcoder-0.1.3-cp39-cp39-win_amd64.whl", hash = "sha256:9433db9c1e40f3c5de79a44c6287caaae692eef3d84897d2cc9931222af935a2"},
+    {file = "graiax-silkcoder-0.1.4.tar.gz", hash = "sha256:3856392c773b5f64594491ce241fc80128802f82a187274e7998e6dea3cffc15"},
+    {file = "graiax_silkcoder-0.1.4-cp38-cp38-win32.whl", hash = "sha256:c28a7d7decdf34983e6d5fd8de0dc257592f48fee5ac100a63b04aface65a36b"},
 ]
 idna = [
     {file = "idna-3.3-py3-none-any.whl", hash = "sha256:84d9dd047ffa80596e0f246e2eab0b391788b0503584e8945f2368256d2735ff"},
@@ -1266,8 +1261,8 @@ pyflakes = [
     {file = "pyflakes-2.4.0.tar.gz", hash = "sha256:05a85c2872edf37a4ed30b0cce2f6093e1d0581f8c19d7393122da7e25b2b24c"},
 ]
 requests = [
-    {file = "requests-2.26.0-py2.py3-none-any.whl", hash = "sha256:6c1246513ecd5ecd4528a0906f910e8f0f9c6b8ec72030dc9fd154dc1a6efd24"},
-    {file = "requests-2.26.0.tar.gz", hash = "sha256:b8aa58f8cf793ffd8782d3d8cb19e66ef36f7aba4353eec859e74678b01b07a7"},
+    {file = "requests-2.27.1-py2.py3-none-any.whl", hash = "sha256:f22fa1e554c9ddfd16e6e41ac79759e17be9e492b3587efa038054674760e72d"},
+    {file = "requests-2.27.1.tar.gz", hash = "sha256:68d7c56fd5a8999887728ef304a6d12edc7be74f1cfa47714fc8b414525c9a61"},
 ]
 tomli = [
     {file = "tomli-1.2.3-py3-none-any.whl", hash = "sha256:e3069e4be3ead9668e21cb9b074cd948f7b3113fd9c8bba083f48247aab8b11c"},
@@ -1279,8 +1274,8 @@ typing-extensions = [
     {file = "typing_extensions-3.10.0.2.tar.gz", hash = "sha256:49f75d16ff11f1cd258e1b988ccff82a3ca5570217d7ad8c5f48205dd99a677e"},
 ]
 urllib3 = [
-    {file = "urllib3-1.26.7-py2.py3-none-any.whl", hash = "sha256:c4fdf4019605b6e5423637e01bc9fe4daef873709a7973e195ceba0a62bbc844"},
-    {file = "urllib3-1.26.7.tar.gz", hash = "sha256:4987c65554f7a2dbf30c18fd48778ef124af6fab771a377103da0585e2336ece"},
+    {file = "urllib3-1.26.8-py2.py3-none-any.whl", hash = "sha256:000ca7f471a233c2251c6c7023ee85305721bfdf18621ebff4fd17a8653427ed"},
+    {file = "urllib3-1.26.8.tar.gz", hash = "sha256:0e7c33d9a63e7ddfcb86780aac87befc2fbddf46c58dbb487e0855f7ceec283c"},
 ]
 wcwidth = [
     {file = "wcwidth-0.2.5-py2.py3-none-any.whl", hash = "sha256:beb4802a9cebb9144e99086eff703a642a13d6a0052920003a230f3294bbe784"},

@@ -9,7 +9,7 @@ homepage = "https://graiax.cn"
 documentation = "https://graiax.cn"
 
 [tool.poetry.dependencies]
-python = ">=3.9, <3.11"
+python = ">=3.9, <4.0"
 graia-ariadne = "^0.5.0"
 graia-broadcast = "^0.14.5"
 graiax-silkcoder = {extras = ["ffmpeg"], version = "^0.1.2"}
