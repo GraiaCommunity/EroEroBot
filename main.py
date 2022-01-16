@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import asyncio
 import os
 import random
 from datetime import datetime
@@ -10,7 +11,7 @@ from graia.ariadne.context import adapter_ctx
 from graia.ariadne.event.message import GroupMessage
 from graia.ariadne.event.mirai import NudgeEvent
 from graia.ariadne.message.chain import MessageChain
-from graia.ariadne.message.element import Forward, ForwardNode, Image, Voice
+from graia.ariadne.message.element import Forward, ForwardNode, Image, Source, Voice
 from graia.ariadne.message.parser.twilight import FullMatch, Sparkle, Twilight
 from graia.ariadne.model import Group, Member, MiraiSession
 from graiax import silkcoder
@@ -85,9 +86,23 @@ async def create_forward(app: Ariadne, group: Group, member: Member):
 @bcc.receiver(GroupMessage, dispatchers=[Twilight(Sparkle([FullMatch("来点网上的涩图2")]))])
 async def download_img2(app: Ariadne, group: Group):
     session = adapter_ctx.get().session
-    async with session.get("https://api.ixiaowai.cn/api/api.php") as resp:
+    async with session.get("https://i1.hdslb.com/bfs/archive/5242750857121e05146d5d5b13a47a2a6dd36e98.jpg") as resp:
         img_bytes = await resp.read()
     await app.sendGroupMessage(group, MessageChain.create(Image(data_bytes=img_bytes)))
+
+
+# 8. 看完了吗，我撤回了
+@bcc.receiver(GroupMessage, dispatchers=[Twilight.from_command("撤回")])
+async def test(app: Ariadne, group: Group, source: Source):
+    session = adapter_ctx.get().session
+    async with session.get("https://i1.hdslb.com/bfs/archive/5242750857121e05146d5d5b13a47a2a6dd36e98.jpg") as resp:
+        data = await resp.read()
+    bot_msg = await app.sendGroupMessage(group, MessageChain.create(Image(data_bytes=data)))
+    await asyncio.sleep(120)
+    # await app.recallMessage(source)  # 通过 Source 撤回他人的消息
+    # await app.recallMessage(source.id)  # 通过 Source 中的消息 ID 撤回他人的消息
+    await app.recallMessage(bot_msg)  # 通过 BotMessage 撤回 bot 自己发的消息
+    # await app.recallMessage(bot_msg.messageId)  # 通过 BotMessage 中的消息 ID 撤回 bot 自己发的消息
 
 
 app.launch_blocking()
