@@ -6,14 +6,26 @@ import os
 import random
 from datetime import datetime
 
+import aiohttp
 from graia.ariadne.app import Ariadne
 from graia.ariadne.context import adapter_ctx
 from graia.ariadne.event.message import GroupMessage
 from graia.ariadne.event.mirai import NudgeEvent
 from graia.ariadne.message.chain import MessageChain
-from graia.ariadne.message.element import Forward, ForwardNode, Image, Source, Voice
+from graia.ariadne.message.element import (
+    At,
+    Face,
+    Forward,
+    ForwardNode,
+    Image,
+    Source,
+    Voice,
+)
+from graia.ariadne.message.formatter import Formatter
 from graia.ariadne.message.parser.twilight import FullMatch, Sparkle, Twilight
 from graia.ariadne.model import Group, Member, MiraiSession
+from graia.broadcast.builtin.decorators import Depend
+from graia.broadcast.exceptions import ExecutionStop
 from graiax import silkcoder
 
 app = Ariadne(
@@ -104,5 +116,91 @@ async def test(app: Ariadne, group: Group, source: Source):
     await app.recallMessage(bot_msg)  # 通过 BotMessage 撤回 bot 自己发的消息
     # await app.recallMessage(bot_msg.messageId)  # 通过 BotMessage 中的消息 ID 撤回 bot 自己发的消息
 
+
+# 9. /斜眼笑
+@bcc.receiver(GroupMessage, dispatchers=[Twilight.from_command("斜眼笑")])
+async def test(app: Ariadne, group: Group):
+    # await app.sendGroupMessage(
+    #     group,
+    #     MessageChain.create(
+    #         "在新的一年里，祝你\n身",
+    #         Face(277),
+    #         "体",
+    #         Face(277),
+    #         "健",
+    #         Face(277),
+    #         "康\n万",
+    #         Face(277),
+    #         "事",
+    #         Face(277),
+    #         "如",
+    #         Face(277),
+    #         "意",
+    #     ),
+    # )
+    await app.sendGroupMessage(
+        group, Formatter("在新的一年里，祝你\n身{doge}体{doge}健{doge}康\n万{doge}事{doge}如{doge}意").format(doge=Face(277))
+    )
+
+
+# 10. 不是所有人都能看涩图 - Start
+# ----------------------------------------------
+# 本示例中部分代码并不能真正发挥作用，仅保证bot可以运行
+# 请勿在未修改的情况下触发，若因触发该部分代码而出现错误
+# 请不要发送 issue 或在其他平台询问
+# ----------------------------------------------
+def check_group(*groups: int):
+    async def check_group_deco(app: Ariadne, group: Group):
+        if group.id not in groups:
+            await app.sendGroupMessage(group, MessageChain.create("对不起，该群并不能发涩图"))
+            raise ExecutionStop
+
+    return Depend(check_group_deco)
+
+
+def check_member(*members: int):
+    async def check_member_deco(app: Ariadne, group: Group, member: Member):
+        if member.id not in members:
+            await app.sendGroupMessage(group, MessageChain.create(At(member.id), "对不起，您的权限并不够"))
+            raise ExecutionStop
+
+    return Depend(check_member_deco)
+
+
+def frequency(*args, **kwargs):
+    return 0
+
+
+def check_frequency(max_frequency: int):
+    async def check_frequency_deco(app: Ariadne, group: Group, member: Member):
+        if frequency(member.id) >= max_frequency:  # 频率判断，详细实现略
+            await app.sendGroupMessage(group, MessageChain.create(At(member.id), "你太快了，能不能持久点"))
+            raise ExecutionStop
+
+    return Depend(check_frequency_deco)
+
+
+@bcc.receiver(
+    GroupMessage,
+    decorators=[
+        check_group(114514, 1919810),
+        check_member(114514, 1919810),
+        check_frequency(10),
+    ],
+    dispatchers=[Twilight.from_command("Depend测试")],
+)
+async def setu(app: Ariadne, group: Group, member: Member):
+    # 此处的链接仅为示例，用于获取涩图api的限制，实际并不存在，请自行替换
+    async with aiohttp.request("GET", "https://setu.example.com/limit") as r:
+        is_max = (await r.json())["is_limit"]
+    if is_max:
+        await app.sendGroupMessage(group, MessageChain.create(At(member.id), "对不起，今天的涩图已经达到上限了哦"))
+    else:
+        ...  # 获取涩图并发送
+        # await app.sendGroupMessage(group, MessageChain.create(Image(data_bytes=setu)))
+
+
+# ----------------------------------------------
+# 10. 不是所有人都能看涩图 - End
 
 app.launch_blocking()
