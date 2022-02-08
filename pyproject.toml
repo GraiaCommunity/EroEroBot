@@ -10,7 +10,7 @@ documentation = "https://graiax.cn"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-graia-ariadne = {extras = ["full"], version = "^0.5.2rc3", allow-prereleases=true}
+graia-ariadne = {extras = ["full"], version = "^0.5.3rc1", allow-prereleases=true}
 graiax-silkcoder = {extras = ["ffmpeg"], version = "^0.1.5"}
 aiohttp = {extras = ["speedups"], version = "^3.8.1"}
 
@@ -33,13 +33,8 @@ profile = "black"
 
 [[tool.poetry.source]]
 name = "tuna-tsinghua"
-default = true
-url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
-
-[[tool.poetry.source]]
-name = "sustech"
 default = false
-url = "https://mirrors.sustech.edu.cn/pypi/simple/"
+url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
 
 [[tool.poetry.source]]
 name = "aliyun"
@@ -50,8 +45,3 @@ url = "https://mirrors.aliyun.com/pypi/simple/"
 name = "tencent-cloud"
 default = false
 url = "https://mirrors.cloud.tencent.com/pypi/simple"
-
-[[tool.poetry.source]]
-name = "netease"
-default = false
-url = "https://mirrors.163.com/pypi/simple/"

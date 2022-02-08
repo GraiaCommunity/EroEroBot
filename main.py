@@ -8,8 +8,8 @@ from datetime import datetime
 from os.path import abspath, dirname, join
 
 import aiohttp
+from graia.ariadne.adapter import Adapter
 from graia.ariadne.app import Ariadne
-from graia.ariadne.context import adapter_ctx
 from graia.ariadne.event.message import GroupMessage
 from graia.ariadne.event.mirai import NudgeEvent
 from graia.ariadne.message.chain import MessageChain
@@ -44,7 +44,7 @@ ROOT_PATH = abspath(dirname(__file__))  # 机器人根目录
 
 bcc = app.broadcast
 loop = app.loop
-sche = GraiaScheduler(loop=loop, broadcast=bcc)
+sche = app.create(GraiaScheduler)
 
 
 # 从第 12 章起，将使用 graia-Saya 作为插件加载框架
@@ -59,14 +59,18 @@ from graia.saya import Saya
 from graia.saya.builtins.broadcast import BroadcastBehaviour
 
 saya = Saya(bcc)  # 初始化 Saya
-saya.install_behaviours(BroadcastBehaviour(bcc))  # 为 bcc 安装 BroadcastBehaviour
-saya.install_behaviours(GraiaSchedulerBehaviour(sche))  # 为定时任务安装 GraiaSchedulerBehaviour
+saya.install_behaviours(
+    BroadcastBehaviour(bcc),  # 为 bcc 安装 BroadcastBehaviour
+    GraiaSchedulerBehaviour(sche)  # 为定时任务安装 GraiaSchedulerBehaviour
+)
 # --------------------------------------------
 # Saya Initialization - End
 # Saya Module Load - Start
 # --------------------------------------------
 with saya.module_context():
     for module in pkgutil.iter_modules([join(ROOT_PATH, "modules")]):
+        if module.name[0] in ('#','_','!','.'):
+            continue
         saya.require(f"modules.{module.name}")
 # --------------------------------------------
 # Saya Module Load - End
@@ -132,7 +136,7 @@ async def forward_test(app: Ariadne, group: Group, member: Member):
 # 6. 来点网上的涩图 -- 直接使用Ariadne自带的session进行请求
 @bcc.receiver(GroupMessage, dispatchers=[Twilight(Sparkle([FullMatch("6来点网上的涩图")]))])
 async def download_test(app: Ariadne, group: Group):
-    session = adapter_ctx.get().session
+    session = Ariadne.get_running(Adapter).session
     async with session.get("https://i1.hdslb.com/bfs/archive/5242750857121e05146d5d5b13a47a2a6dd36e98.jpg") as resp:
         img_bytes = await resp.read()
     await app.sendGroupMessage(group, MessageChain.create(Image(data_bytes=img_bytes)))
@@ -141,7 +145,7 @@ async def download_test(app: Ariadne, group: Group):
 # 8. 看完了吗，我撤回了
 @bcc.receiver(GroupMessage, dispatchers=[Twilight.from_command("8撤回")])
 async def recall_test(app: Ariadne, group: Group, source: Source):
-    session = adapter_ctx.get().session
+    session = Ariadne.get_running(Adapter).session
     async with session.get("https://i1.hdslb.com/bfs/archive/5242750857121e05146d5d5b13a47a2a6dd36e98.jpg") as resp:
         data = await resp.read()
     bot_msg = await app.sendGroupMessage(group, MessageChain.create(Image(data_bytes=data)))
