@@ -187,7 +187,7 @@ reference = "tuna-tsinghua"
 
 [[package]]
 name = "charset-normalizer"
-version = "2.0.10"
+version = "2.0.11"
 description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
 category = "main"
 optional = false
@@ -292,8 +292,8 @@ reference = "tuna-tsinghua"
 
 [[package]]
 name = "graia-ariadne"
-version = "0.5.2rc3"
-description = "Another elegant framework for mirai and mirai-api-http v2."
+version = "0.5.3rc1"
+description = "Another elegant Python QQ Bot framework for mirai and mirai-api-http v2."
 category = "main"
 optional = false
 python-versions = ">=3.8,<4.0"
@@ -301,10 +301,10 @@ python-versions = ">=3.8,<4.0"
 [package.dependencies]
 aiohttp = ">=3.7.4,<4.0.0"
 arclet-alconna = {version = ">=0.4.1,<0.5.0", optional = true, markers = "extra == \"alconna\" or extra == \"full\""}
-graia-broadcast = ">=0.15.2,<0.16.0"
-graia-saya = {version = ">=0.0.13,<0.0.14", optional = true, markers = "extra == \"graia\" or extra == \"full\""}
+graia-broadcast = ">=0.15.4,<0.16.0"
+graia-saya = {version = ">=0.0.14,<0.0.15", optional = true, markers = "extra == \"graia\" or extra == \"full\""}
 graia-scheduler = {version = ">=0.0.6,<0.0.7", optional = true, markers = "extra == \"graia\" or extra == \"full\""}
-loguru = ">=0.5,<0.6"
+loguru = ">=0.6,<0.7"
 prompt-toolkit = ">=3.0.24,<4.0.0"
 pydantic = ">=1.8.2,<2.0.0"
 typing-extensions = ">=4.0.0,<5.0.0"
@@ -312,8 +312,8 @@ yarl = ">=1.7,<2.0"
 
 [package.extras]
 alconna = ["arclet-alconna (>=0.4.1,<0.5.0)"]
-full = ["arclet-alconna (>=0.4.1,<0.5.0)", "graia-saya (>=0.0.13,<0.0.14)", "graia-scheduler (>=0.0.6,<0.0.7)"]
-graia = ["graia-saya (>=0.0.13,<0.0.14)", "graia-scheduler (>=0.0.6,<0.0.7)"]
+full = ["arclet-alconna (>=0.4.1,<0.5.0)", "graia-saya (>=0.0.14,<0.0.15)", "graia-scheduler (>=0.0.6,<0.0.7)"]
+graia = ["graia-saya (>=0.0.14,<0.0.15)", "graia-scheduler (>=0.0.6,<0.0.7)"]
 document = ["mkdocs-material (>=8.1.2)", "pdoc (>=8.0,<9.0)"]
 
 [package.source]
@@ -323,7 +323,7 @@ reference = "tuna-tsinghua"
 
 [[package]]
 name = "graia-broadcast"
-version = "0.15.2"
+version = "0.15.6"
 description = "a highly customizable, elegantly designed event system based on asyncio"
 category = "main"
 optional = false
@@ -336,7 +336,7 @@ reference = "tuna-tsinghua"
 
 [[package]]
 name = "graia-saya"
-version = "0.0.13"
+version = "0.0.14"
 description = ""
 category = "main"
 optional = false
@@ -344,7 +344,7 @@ python-versions = ">=3.7,<4.0"
 
 [package.dependencies]
 graia-broadcast = ">=0.12.1"
-loguru = ">=0.5.3,<0.6.0"
+loguru = ">=0.5.3,<0.7"
 
 [package.source]
 type = "legacy"
@@ -370,7 +370,7 @@ reference = "tuna-tsinghua"
 
 [[package]]
 name = "graiax-silkcoder"
-version = "0.1.5"
+version = "0.1.6"
 description = "transform audio file to silk"
 category = "main"
 optional = false
@@ -438,7 +438,7 @@ reference = "tuna-tsinghua"
 
 [[package]]
 name = "loguru"
-version = "0.5.3"
+version = "0.6.0"
 description = "Python logging made (stupidly) simple"
 category = "main"
 optional = false
@@ -449,7 +449,7 @@ colorama = {version = ">=0.3.4", markers = "sys_platform == \"win32\""}
 win32-setctime = {version = ">=1.0.0", markers = "sys_platform == \"win32\""}
 
 [package.extras]
-dev = ["codecov (>=2.0.15)", "colorama (>=0.3.4)", "flake8 (>=3.7.7)", "tox (>=3.9.0)", "tox-travis (>=0.12)", "pytest (>=4.6.2)", "pytest-cov (>=2.7.1)", "Sphinx (>=2.2.1)", "sphinx-autobuild (>=0.7.1)", "sphinx-rtd-theme (>=0.4.3)", "black (>=19.10b0)", "isort (>=5.1.1)"]
+dev = ["colorama (>=0.3.4)", "docutils (==0.16)", "flake8 (>=3.7.7)", "tox (>=3.9.0)", "pytest (>=4.6.2)", "pytest-cov (>=2.7.1)", "black (>=19.10b0)", "isort (>=5.1.1)", "Sphinx (>=4.1.1)", "sphinx-autobuild (>=0.7.1)", "sphinx-rtd-theme (>=0.4.3)"]
 
 [package.source]
 type = "legacy"
@@ -510,11 +510,11 @@ reference = "tuna-tsinghua"
 
 [[package]]
 name = "pip-api"
-version = "0.0.26"
+version = "0.0.27"
 description = "An unofficial, importable pip API"
 category = "dev"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 
 [package.source]
 type = "legacy"
@@ -557,7 +557,7 @@ reference = "tuna-tsinghua"
 
 [[package]]
 name = "prompt-toolkit"
-version = "3.0.26"
+version = "3.0.27"
 description = "Library for building powerful interactive command lines in Python"
 category = "main"
 optional = false
@@ -703,7 +703,7 @@ reference = "tuna-tsinghua"
 
 [[package]]
 name = "tomli"
-version = "2.0.0"
+version = "2.0.1"
 description = "A lil' TOML parser"
 category = "dev"
 optional = false
@@ -810,7 +810,7 @@ reference = "tuna-tsinghua"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "07a55fb0715f5e08569009d44aefb82879f53a8319f0a12b02b14a2def290261"
+content-hash = "b929529e902d364d1b377479f2033a195ebf4d4b8979d093b4249133952c8ec4"
 
 [metadata.files]
 aiodns = [
@@ -943,6 +943,9 @@ brotli = [
     {file = "Brotli-1.0.9-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7ee83d3e3a024a9618e5be64648d6d11c37047ac48adff25f12fa4226cf23d1c"},
     {file = "Brotli-1.0.9-cp310-cp310-manylinux_2_5_i686.manylinux1_i686.manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:19598ecddd8a212aedb1ffa15763dd52a388518c4550e615aed88dc3753c0f0c"},
     {file = "Brotli-1.0.9-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:44bb8ff420c1d19d91d79d8c3574b8954288bdff0273bf788954064d260d7ab0"},
+    {file = "Brotli-1.0.9-cp310-cp310-musllinux_1_1_aarch64.whl", hash = "sha256:e23281b9a08ec338469268f98f194658abfb13658ee98e2b7f85ee9dd06caa91"},
+    {file = "Brotli-1.0.9-cp310-cp310-musllinux_1_1_i686.whl", hash = "sha256:3496fc835370da351d37cada4cf744039616a6db7d13c430035e901443a34daa"},
+    {file = "Brotli-1.0.9-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:b83bb06a0192cccf1eb8d0a28672a1b79c74c3a8a5f2619625aeb6f28b3a82bb"},
     {file = "Brotli-1.0.9-cp310-cp310-win32.whl", hash = "sha256:26d168aac4aaec9a4394221240e8a5436b5634adc3cd1cdf637f6645cecbf181"},
     {file = "Brotli-1.0.9-cp310-cp310-win_amd64.whl", hash = "sha256:622a231b08899c864eb87e85f81c75e7b9ce05b001e59bbfbf43d4a71f5f32b2"},
     {file = "Brotli-1.0.9-cp35-cp35m-macosx_10_6_intel.whl", hash = "sha256:c83aa123d56f2e060644427a882a36b3c12db93727ad7a7b9efd7d7f3e9cc2c4"},
@@ -954,12 +957,18 @@ brotli = [
     {file = "Brotli-1.0.9-cp36-cp36m-manylinux1_i686.whl", hash = "sha256:40d15c79f42e0a2c72892bf407979febd9cf91f36f495ffb333d1d04cebb34e4"},
     {file = "Brotli-1.0.9-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:93130612b837103e15ac3f9cbacb4613f9e348b58b3aad53721d92e57f96d46a"},
     {file = "Brotli-1.0.9-cp36-cp36m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:87fdccbb6bb589095f413b1e05734ba492c962b4a45a13ff3408fa44ffe6479b"},
+    {file = "Brotli-1.0.9-cp36-cp36m-musllinux_1_1_aarch64.whl", hash = "sha256:6d847b14f7ea89f6ad3c9e3901d1bc4835f6b390a9c71df999b0162d9bb1e20f"},
+    {file = "Brotli-1.0.9-cp36-cp36m-musllinux_1_1_i686.whl", hash = "sha256:495ba7e49c2db22b046a53b469bbecea802efce200dffb69b93dd47397edc9b6"},
+    {file = "Brotli-1.0.9-cp36-cp36m-musllinux_1_1_x86_64.whl", hash = "sha256:4688c1e42968ba52e57d8670ad2306fe92e0169c6f3af0089be75bbac0c64a3b"},
     {file = "Brotli-1.0.9-cp36-cp36m-win32.whl", hash = "sha256:61a7ee1f13ab913897dac7da44a73c6d44d48a4adff42a5701e3239791c96e14"},
     {file = "Brotli-1.0.9-cp36-cp36m-win_amd64.whl", hash = "sha256:1c48472a6ba3b113452355b9af0a60da5c2ae60477f8feda8346f8fd48e3e87c"},
     {file = "Brotli-1.0.9-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:3b78a24b5fd13c03ee2b7b86290ed20efdc95da75a3557cc06811764d5ad1126"},
     {file = "Brotli-1.0.9-cp37-cp37m-manylinux1_i686.whl", hash = "sha256:9d12cf2851759b8de8ca5fde36a59c08210a97ffca0eb94c532ce7b17c6a3d1d"},
     {file = "Brotli-1.0.9-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:6c772d6c0a79ac0f414a9f8947cc407e119b8598de7621f39cacadae3cf57d12"},
     {file = "Brotli-1.0.9-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:29d1d350178e5225397e28ea1b7aca3648fcbab546d20e7475805437bfb0a130"},
+    {file = "Brotli-1.0.9-cp37-cp37m-musllinux_1_1_aarch64.whl", hash = "sha256:7bbff90b63328013e1e8cb50650ae0b9bac54ffb4be6104378490193cd60f85a"},
+    {file = "Brotli-1.0.9-cp37-cp37m-musllinux_1_1_i686.whl", hash = "sha256:ec1947eabbaf8e0531e8e899fc1d9876c179fc518989461f5d24e2223395a9e3"},
+    {file = "Brotli-1.0.9-cp37-cp37m-musllinux_1_1_x86_64.whl", hash = "sha256:12effe280b8ebfd389022aa65114e30407540ccb89b177d3fbc9a4f177c4bd5d"},
     {file = "Brotli-1.0.9-cp37-cp37m-win32.whl", hash = "sha256:f909bbbc433048b499cb9db9e713b5d8d949e8c109a2a548502fb9aa8630f0b1"},
     {file = "Brotli-1.0.9-cp37-cp37m-win_amd64.whl", hash = "sha256:97f715cf371b16ac88b8c19da00029804e20e25f30d80203417255d239f228b5"},
     {file = "Brotli-1.0.9-cp38-cp38-macosx_10_9_universal2.whl", hash = "sha256:e16eb9541f3dd1a3e92b89005e37b1257b157b7256df0e36bd7b33b50be73bcb"},
@@ -967,6 +976,9 @@ brotli = [
     {file = "Brotli-1.0.9-cp38-cp38-manylinux1_i686.whl", hash = "sha256:b663f1e02de5d0573610756398e44c130add0eb9a3fc912a09665332942a2efb"},
     {file = "Brotli-1.0.9-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:5b6ef7d9f9c38292df3690fe3e302b5b530999fa90014853dcd0d6902fb59f26"},
     {file = "Brotli-1.0.9-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:8a674ac10e0a87b683f4fa2b6fa41090edfd686a6524bd8dedbd6138b309175c"},
+    {file = "Brotli-1.0.9-cp38-cp38-musllinux_1_1_aarch64.whl", hash = "sha256:e2d9e1cbc1b25e22000328702b014227737756f4b5bf5c485ac1d8091ada078b"},
+    {file = "Brotli-1.0.9-cp38-cp38-musllinux_1_1_i686.whl", hash = "sha256:b336c5e9cf03c7be40c47b5fd694c43c9f1358a80ba384a21969e0b4e66a9b17"},
+    {file = "Brotli-1.0.9-cp38-cp38-musllinux_1_1_x86_64.whl", hash = "sha256:85f7912459c67eaab2fb854ed2bc1cc25772b300545fe7ed2dc03954da638649"},
     {file = "Brotli-1.0.9-cp38-cp38-win32.whl", hash = "sha256:35a3edbe18e876e596553c4007a087f8bcfd538f19bc116917b3c7522fca0429"},
     {file = "Brotli-1.0.9-cp38-cp38-win_amd64.whl", hash = "sha256:269a5743a393c65db46a7bb982644c67ecba4b8d91b392403ad8a861ba6f495f"},
     {file = "Brotli-1.0.9-cp39-cp39-macosx_10_9_universal2.whl", hash = "sha256:2aad0e0baa04517741c9bb5b07586c642302e5fb3e75319cb62087bd0995ab19"},
@@ -974,6 +986,9 @@ brotli = [
     {file = "Brotli-1.0.9-cp39-cp39-manylinux1_i686.whl", hash = "sha256:16d528a45c2e1909c2798f27f7bf0a3feec1dc9e50948e738b961618e38b6a7b"},
     {file = "Brotli-1.0.9-cp39-cp39-manylinux1_x86_64.whl", hash = "sha256:56d027eace784738457437df7331965473f2c0da2c70e1a1f6fdbae5402e0389"},
     {file = "Brotli-1.0.9-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:9bf919756d25e4114ace16a8ce91eb340eb57a08e2c6950c3cebcbe3dff2a5e7"},
+    {file = "Brotli-1.0.9-cp39-cp39-musllinux_1_1_aarch64.whl", hash = "sha256:e4c4e92c14a57c9bd4cb4be678c25369bf7a092d55fd0866f759e425b9660806"},
+    {file = "Brotli-1.0.9-cp39-cp39-musllinux_1_1_i686.whl", hash = "sha256:e48f4234f2469ed012a98f4b7874e7f7e173c167bed4934912a29e03167cf6b1"},
+    {file = "Brotli-1.0.9-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:9ed4c92a0665002ff8ea852353aeb60d9141eb04109e88928026d3c8a9e5433c"},
     {file = "Brotli-1.0.9-cp39-cp39-win32.whl", hash = "sha256:cfc391f4429ee0a9370aa93d812a52e1fee0f37a81861f4fdd1f4fb28e8547c3"},
     {file = "Brotli-1.0.9-cp39-cp39-win_amd64.whl", hash = "sha256:854c33dad5ba0fbd6ab69185fec8dab89e13cda6b7d191ba111987df74f38761"},
     {file = "Brotli-1.0.9-pp37-pypy37_pp73-macosx_10_9_x86_64.whl", hash = "sha256:9749a124280a0ada4187a6cfd1ffd35c350fb3af79c706589d98e088c5044267"},
@@ -1068,8 +1083,8 @@ cffi = [
     {file = "cffi-1.15.0.tar.gz", hash = "sha256:920f0d66a896c2d99f0adbb391f990a84091179542c205fa53ce5787aff87954"},
 ]
 charset-normalizer = [
-    {file = "charset-normalizer-2.0.10.tar.gz", hash = "sha256:876d180e9d7432c5d1dfd4c5d26b72f099d503e8fcc0feb7532c9289be60fcbd"},
-    {file = "charset_normalizer-2.0.10-py3-none-any.whl", hash = "sha256:cb957888737fc0bbcd78e3df769addb41fd1ff8cf950dc9e7ad7793f1bf44455"},
+    {file = "charset-normalizer-2.0.11.tar.gz", hash = "sha256:98398a9d69ee80548c762ba991a4728bfc3836768ed226b3945908d1a688371c"},
+    {file = "charset_normalizer-2.0.11-py3-none-any.whl", hash = "sha256:2842d8f5e82a1f6aa437380934d5e1cd4fcf2003b06fed6940769c164a480a45"},
 ]
 click = [
     {file = "click-8.0.3-py3-none-any.whl", hash = "sha256:353f466495adaeb40b6b5f592f9f91cb22372351c84caeb068132442a4518ef3"},
@@ -1152,53 +1167,53 @@ frozenlist = [
     {file = "frozenlist-1.3.0.tar.gz", hash = "sha256:ce6f2ba0edb7b0c1d8976565298ad2deba6f8064d2bebb6ffce2ca896eb35b0b"},
 ]
 graia-ariadne = [
-    {file = "graia-ariadne-0.5.2rc3.tar.gz", hash = "sha256:0fd6f058e4ea9426833b11d475b5ee924aceede35678002f1bcfd8ead4fe96e7"},
-    {file = "graia_ariadne-0.5.2rc3-py3-none-any.whl", hash = "sha256:d899d26eb4e5165d5e6644a7db8c110e5e01aaa66781680e6074b8baed429e7c"},
+    {file = "graia-ariadne-0.5.3rc1.tar.gz", hash = "sha256:4e3bf3016bf406b4456d7e6d2f1d5c971130f9e498c5cf88c5f6a27d95c1b4b4"},
+    {file = "graia_ariadne-0.5.3rc1-py3-none-any.whl", hash = "sha256:c144c54b0cc575d80b2ed9b72a732ea5ea1d948bc019a6d78bbc5ead6e4d335c"},
 ]
 graia-broadcast = [
-    {file = "graia-broadcast-0.15.2.tar.gz", hash = "sha256:7b917f909d4ae7c8977d3a3208970956d6ff82b2de3f6cd5d058e3533751e7bf"},
-    {file = "graia_broadcast-0.15.2-py3-none-any.whl", hash = "sha256:8062c99cb3f6c1dd55d9b2cb0f950ce454f202994f828362f0f8408cc35150ad"},
+    {file = "graia-broadcast-0.15.6.tar.gz", hash = "sha256:695648313018e82ba6ceedc068ff99a204abb39b277cec414982485eac99e68c"},
+    {file = "graia_broadcast-0.15.6-py3-none-any.whl", hash = "sha256:79ac2ece113b3efd25070a095a56c2f81a114a9dcb023b21414e34cdfa82540a"},
 ]
 graia-saya = [
-    {file = "graia-saya-0.0.13.tar.gz", hash = "sha256:07b4fe4c5e9b82212b63207e6264f5fa296375bdebeb6e972f50eb5825d52547"},
-    {file = "graia_saya-0.0.13-py3-none-any.whl", hash = "sha256:9ffcef9b5ed17c1032d77e199b9718c05b41b76c12888a368a0d234b0771b91c"},
+    {file = "graia-saya-0.0.14.tar.gz", hash = "sha256:ffeb3e7cf39442c219481e0713e868a15c42e522f32b35685915dd3b7bab7f08"},
+    {file = "graia_saya-0.0.14-py3-none-any.whl", hash = "sha256:060399df3c6984c9d1a3b84551058f78123f072dbfabe0901fc25ba4fc4da060"},
 ]
 graia-scheduler = [
     {file = "graia-scheduler-0.0.6.tar.gz", hash = "sha256:aa4a40a7841709638cc98fe7a093ae0582858ba1326d67961de73e91bc5617b5"},
     {file = "graia_scheduler-0.0.6-py3-none-any.whl", hash = "sha256:bc29952bbb1c2f8c8875c32bec9dcdedc0fa22ba89b94804498963b491eed1e5"},
 ]
 graiax-silkcoder = [
-    {file = "graiax-silkcoder-0.1.5.tar.gz", hash = "sha256:3242bbadb53a9ee886a3ff23af05b06c53d5ee4a3c1638ba2df7a474b33b3c0a"},
-    {file = "graiax_silkcoder-0.1.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:593417b4ba8119693fb9fd11952917fee3b9c0ef58a64ad4402a3b0fa05c360a"},
-    {file = "graiax_silkcoder-0.1.5-cp310-cp310-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:d227f6c4a9a9c763d00b075b3d198b9a465bee173466e954f99134d6040516a1"},
-    {file = "graiax_silkcoder-0.1.5-cp310-cp310-musllinux_1_1_i686.whl", hash = "sha256:0fe6d5ecc898de73cb67edd8da053b293cdbdd3c8d9d604f3a8aa82d57a6cf17"},
-    {file = "graiax_silkcoder-0.1.5-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:52061146cb8faee99619a59a08119c73e0ed25cc3a54b3e1c766f1d086e121f2"},
-    {file = "graiax_silkcoder-0.1.5-cp310-cp310-win32.whl", hash = "sha256:fe600fbe02e3e65fcc02df8dd6a746fb2a67338a8822446ebdc2666260406a07"},
-    {file = "graiax_silkcoder-0.1.5-cp310-cp310-win_amd64.whl", hash = "sha256:aff484dec3ff42e397a76de29c34357df2926ca1cf5c7df87ab15a56e187f499"},
-    {file = "graiax_silkcoder-0.1.5-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:71ff26df08695fcc806b60297ba1d6be28d53380ae858d1740e552363eb763a2"},
-    {file = "graiax_silkcoder-0.1.5-cp36-cp36m-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:68b8b54246560524adada5d950f3df3c41f5716e885574e76f587f32854b9806"},
-    {file = "graiax_silkcoder-0.1.5-cp36-cp36m-musllinux_1_1_i686.whl", hash = "sha256:963abd35678cb4870befa9fb73cab05cc4582fe71ecf8758040bd57fae0b27cb"},
-    {file = "graiax_silkcoder-0.1.5-cp36-cp36m-musllinux_1_1_x86_64.whl", hash = "sha256:8f0c5b8b13b393c6a4238cd223bafb7337658d03f5c13c1159ced22badccb27e"},
-    {file = "graiax_silkcoder-0.1.5-cp36-cp36m-win32.whl", hash = "sha256:5762cb04442a8f3dd0781eb670b2245d28fa26f0fbbeffd1d03c4b48509a5761"},
-    {file = "graiax_silkcoder-0.1.5-cp36-cp36m-win_amd64.whl", hash = "sha256:ae773295a051b69f6762e4ee7d0803b98fa38b5f894b8e4679d1bbd29e6178d7"},
-    {file = "graiax_silkcoder-0.1.5-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c884eb799badc18c1dde39b11009089e2f2a85b1b99aa0c7c6cbc39f527b15c6"},
-    {file = "graiax_silkcoder-0.1.5-cp37-cp37m-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:80458a3eb605c6ab1fffa03b763f17c556eac8cef794d0690c70074ac3a4d99c"},
-    {file = "graiax_silkcoder-0.1.5-cp37-cp37m-musllinux_1_1_i686.whl", hash = "sha256:9a0754134b260cb494d61451c6ffa125b95ed779287b4de1390dbbddb37bb246"},
-    {file = "graiax_silkcoder-0.1.5-cp37-cp37m-musllinux_1_1_x86_64.whl", hash = "sha256:d394dadc71a246812fce6e7bf496c82bbe713a90a99c0b4aa7909f7a265606b7"},
-    {file = "graiax_silkcoder-0.1.5-cp37-cp37m-win32.whl", hash = "sha256:177eebf19628becc1a3f99682d08c9dfd14d85c209b850d65459de30c739d1ef"},
-    {file = "graiax_silkcoder-0.1.5-cp37-cp37m-win_amd64.whl", hash = "sha256:95183a3ce48ac17447bf08dd5bd73cd222862ca1de00310ac0a6af682f2abbb0"},
-    {file = "graiax_silkcoder-0.1.5-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e9d5b36460cb87a29fb2229f88436eb621fe4f24a1818ada9dccff4b82d1f713"},
-    {file = "graiax_silkcoder-0.1.5-cp38-cp38-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:097e07f793327da18a2dc5c7810b765dccc09f73036381919cc89f5b6b535f88"},
-    {file = "graiax_silkcoder-0.1.5-cp38-cp38-musllinux_1_1_i686.whl", hash = "sha256:123306ac2b0ac898731248a58aa65e04ec336f6ad11bfeb02a03e8a090258924"},
-    {file = "graiax_silkcoder-0.1.5-cp38-cp38-musllinux_1_1_x86_64.whl", hash = "sha256:ba7ad32ec479423a9c1974839027fb98f16fe149256398d7d283f909cf73ece4"},
-    {file = "graiax_silkcoder-0.1.5-cp38-cp38-win32.whl", hash = "sha256:af27c1917fa538f2c891b1ed4140aa5a72f485f45cbd2fad9aace0e16760c80e"},
-    {file = "graiax_silkcoder-0.1.5-cp38-cp38-win_amd64.whl", hash = "sha256:be0e76a47560c713f0ea547d1a229600f6949c8262b0c406ea9269e5ec7a48b0"},
-    {file = "graiax_silkcoder-0.1.5-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:fce8c9dcb2329c5b0e1a1f336e683e27620f408d98bd74d4636ac1ebdd120509"},
-    {file = "graiax_silkcoder-0.1.5-cp39-cp39-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:599a63b37e794668c33ff24c98a6f3a5db735a9fe79cdb1d8de0a49da21c0ff6"},
-    {file = "graiax_silkcoder-0.1.5-cp39-cp39-musllinux_1_1_i686.whl", hash = "sha256:dfda448cb1a40aa9ca93a2b6ed2443d2b5a5a88cc8e351498a547152f368fa4c"},
-    {file = "graiax_silkcoder-0.1.5-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:755371bac9bdf95fefe7d51e6009c8b6dca6a2fa6bbfdd9bfe3f1cf14c0e0d0e"},
-    {file = "graiax_silkcoder-0.1.5-cp39-cp39-win32.whl", hash = "sha256:f135382769a5259dba2ce09d67bc60cf156c53a62a6b99044b124cbc6db167be"},
-    {file = "graiax_silkcoder-0.1.5-cp39-cp39-win_amd64.whl", hash = "sha256:44c801985e8b1725c35279ecbb019a4f48b6b9870b611621eb1e795daa7ac229"},
+    {file = "graiax-silkcoder-0.1.6.tar.gz", hash = "sha256:2677ca6edaf31b5129f20b59752de9c2cbd440ccc3a0d43281417423b38bd4ce"},
+    {file = "graiax_silkcoder-0.1.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f7a1eac77449896f9f457c80c7d0077e3c7f95f4e87aa482baf2dfe46bd4e1d5"},
+    {file = "graiax_silkcoder-0.1.6-cp310-cp310-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:001dbb025a31b1dfa646e6c7f7e681c7055a508558283c8715b01947f97dcd31"},
+    {file = "graiax_silkcoder-0.1.6-cp310-cp310-musllinux_1_1_i686.whl", hash = "sha256:8e7e25b817229ed86974ad948a6ca393899e3a9c758d2c6857e8982ce09e1fba"},
+    {file = "graiax_silkcoder-0.1.6-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:aff348f0a00d63ebd7de23cbfa6a2c65e3b0a6ec65d05d52b59619fbc2acd352"},
+    {file = "graiax_silkcoder-0.1.6-cp310-cp310-win32.whl", hash = "sha256:f48058e2131ba137c6a4fc0b8fa38cf318fcabe56f5afc9b470cce7544e0642f"},
+    {file = "graiax_silkcoder-0.1.6-cp310-cp310-win_amd64.whl", hash = "sha256:21aa53e92f801399b0db88821ccf1ea74d069fd2a1046bf2393852dbb2948e23"},
+    {file = "graiax_silkcoder-0.1.6-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:67eeb9caa52305aa314bda2499d6758b1239cc9a376441b51a6771451757ce8f"},
+    {file = "graiax_silkcoder-0.1.6-cp36-cp36m-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:32d8858db9c67c81adaa0b48652c326eda180ae6abaa057398433a312f9717f2"},
+    {file = "graiax_silkcoder-0.1.6-cp36-cp36m-musllinux_1_1_i686.whl", hash = "sha256:97e373160321c8a90aa22a5220022fbf06e9391c63c0d03c19302fe2f113d6a6"},
+    {file = "graiax_silkcoder-0.1.6-cp36-cp36m-musllinux_1_1_x86_64.whl", hash = "sha256:a2d291f8000402ffa1be505263b926426ec017424df463aaa9745955cdd1bb92"},
+    {file = "graiax_silkcoder-0.1.6-cp36-cp36m-win32.whl", hash = "sha256:54753aa2d207c5c0d44a85b5be7d15c391d0ca0602a8415fa73840ea49cb53b0"},
+    {file = "graiax_silkcoder-0.1.6-cp36-cp36m-win_amd64.whl", hash = "sha256:d0c0efd35d259159f62f02dfa1c4218156ac944a0da25f4a888e80ce716806af"},
+    {file = "graiax_silkcoder-0.1.6-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:acf4e3a2219443389efa2284c1a686790aa82269a42b073e29993757bd91f169"},
+    {file = "graiax_silkcoder-0.1.6-cp37-cp37m-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:6458511a7f9d6adeefb24f047ef0c3f2b6c7c69f6a76f3b8f52d3611bb0cbd68"},
+    {file = "graiax_silkcoder-0.1.6-cp37-cp37m-musllinux_1_1_i686.whl", hash = "sha256:8aa5b698f24ce8c13a9a6045337df019d2c650e8c16cbdfa600545343c1e9ceb"},
+    {file = "graiax_silkcoder-0.1.6-cp37-cp37m-musllinux_1_1_x86_64.whl", hash = "sha256:12ca6bffd061599a2c265a8438552a0f50d11091428bd551316f47cdc3e7aef9"},
+    {file = "graiax_silkcoder-0.1.6-cp37-cp37m-win32.whl", hash = "sha256:1933ca30301bf36c49ee8a2dbdc591e5cc3b514bf1da9f3ba553922d7e191813"},
+    {file = "graiax_silkcoder-0.1.6-cp37-cp37m-win_amd64.whl", hash = "sha256:0b8c8b4fa10d94b041088c89b997655866ac7ed9929f6f7d3e3c0a6aaef15377"},
+    {file = "graiax_silkcoder-0.1.6-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:5cc3c50ae52b2a2427740d71c552e041f97518698c6f177eb4bef0e1f2db9781"},
+    {file = "graiax_silkcoder-0.1.6-cp38-cp38-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:dade2d8997a35f02a6d3644c1763b7f051e13b08ff37d1859b02189ccf484423"},
+    {file = "graiax_silkcoder-0.1.6-cp38-cp38-musllinux_1_1_i686.whl", hash = "sha256:def65f1cc497b58b7d6109c3890bf1b74c89827b204a0808a72bf290d74e393a"},
+    {file = "graiax_silkcoder-0.1.6-cp38-cp38-musllinux_1_1_x86_64.whl", hash = "sha256:1e366b441ff03f83ff62b82cd40966316048aaeec1ae836d8b3e38e001054e1a"},
+    {file = "graiax_silkcoder-0.1.6-cp38-cp38-win32.whl", hash = "sha256:cde8416781284352bec5e50442714207690e82201cb391765564959ed0cc6d07"},
+    {file = "graiax_silkcoder-0.1.6-cp38-cp38-win_amd64.whl", hash = "sha256:90611cc884113e50a837ecc54c968c6532e6bd410e0d5f1e7333dea997d5e521"},
+    {file = "graiax_silkcoder-0.1.6-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2cb26410cc759432c04ae8a94614d65594dbc74156c8b4dc280523d6d53210ad"},
+    {file = "graiax_silkcoder-0.1.6-cp39-cp39-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:bd3585f341cb58b652223d48ba589a09828aaf4c1bf5dcb0ee480a8ea3fa26fe"},
+    {file = "graiax_silkcoder-0.1.6-cp39-cp39-musllinux_1_1_i686.whl", hash = "sha256:bbae96b3ba76924ce8f6928d398d3c79f978af5679ed4b46975df788dd3cf009"},
+    {file = "graiax_silkcoder-0.1.6-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:22c65d1929b379f04865ecf771ea8fbfbff022a1bec02a86bea2a232cfd6faaa"},
+    {file = "graiax_silkcoder-0.1.6-cp39-cp39-win32.whl", hash = "sha256:4db77668d9d4e099da1cc482472cb4b14e9ce1f82f4b7fb4c1459417c806791a"},
+    {file = "graiax_silkcoder-0.1.6-cp39-cp39-win_amd64.whl", hash = "sha256:3beeaa1f82207ac3f290f369f37f895de027d8db431be549cd9fbfae021619b4"},
 ]
 idna = [
     {file = "idna-3.3-py3-none-any.whl", hash = "sha256:84d9dd047ffa80596e0f246e2eab0b391788b0503584e8945f2368256d2735ff"},
@@ -1217,8 +1232,8 @@ isort = [
     {file = "isort-5.10.1.tar.gz", hash = "sha256:e8443a5e7a020e9d7f97f1d7d9cd17c88bcb3bc7e218bf9cf5095fe550be2951"},
 ]
 loguru = [
-    {file = "loguru-0.5.3-py3-none-any.whl", hash = "sha256:f8087ac396b5ee5f67c963b495d615ebbceac2796379599820e324419d53667c"},
-    {file = "loguru-0.5.3.tar.gz", hash = "sha256:b28e72ac7a98be3d28ad28570299a393dfcd32e5e3f6a353dec94675767b6319"},
+    {file = "loguru-0.6.0-py3-none-any.whl", hash = "sha256:4e2414d534a2ab57573365b3e6d0234dfb1d84b68b7f3b948e6fb743860a77c3"},
+    {file = "loguru-0.6.0.tar.gz", hash = "sha256:066bd06758d0a513e9836fd9c6b5a75bfb3fd36841f4b996bc60b547a309d41c"},
 ]
 mccabe = [
     {file = "mccabe-0.6.1-py2.py3-none-any.whl", hash = "sha256:ab8a6258860da4b6677da4bd2fe5dc2c659cff31b3ee4f7f5d64e79735b80d42"},
@@ -1294,8 +1309,8 @@ pathspec = [
     {file = "pathspec-0.9.0.tar.gz", hash = "sha256:e564499435a2673d586f6b2130bb5b95f04a3ba06f81b8f895b651a3c76aabb1"},
 ]
 pip-api = [
-    {file = "pip-api-0.0.26.tar.gz", hash = "sha256:d1266be311f1cd1ddd0d501e99275c7f6ff1fd0ec6db46d521f56e747d9286e5"},
-    {file = "pip_api-0.0.26-py3-none-any.whl", hash = "sha256:b24e94e5d5d3f161a2db49653798e6a4c1f0ed6b379e511b45a8fa57c185d711"},
+    {file = "pip-api-0.0.27.tar.gz", hash = "sha256:354825f2fa89b9b1c56e943be32823c09590e13055a57af5590456ff7d6524bd"},
+    {file = "pip_api-0.0.27-py3-none-any.whl", hash = "sha256:da0a10870b9105bc7ff7f347793db885c5c30102032de9112a6118b7af645478"},
 ]
 pipreqs = [
     {file = "pipreqs-0.4.11-py2.py3-none-any.whl", hash = "sha256:1510a91ae73ef6a8e2f24ffc8751132251cd61a01296d61538f37d1491841640"},
@@ -1306,8 +1321,8 @@ platformdirs = [
     {file = "platformdirs-2.4.1.tar.gz", hash = "sha256:440633ddfebcc36264232365d7840a970e75e1018d15b4327d11f91909045fda"},
 ]
 prompt-toolkit = [
-    {file = "prompt_toolkit-3.0.26-py3-none-any.whl", hash = "sha256:4bcf119be2200c17ed0d518872ef922f1de336eb6d1ddbd1e089ceb6447d97c6"},
-    {file = "prompt_toolkit-3.0.26.tar.gz", hash = "sha256:a51d41a6a45fd9def54365bca8f0402c8f182f2b6f7e29c74d55faeb9fb38ac4"},
+    {file = "prompt_toolkit-3.0.27-py3-none-any.whl", hash = "sha256:cb7dae7d2c59188c85a1d6c944fad19aded6a26bd9c8ae115a4e1c20eb90b713"},
+    {file = "prompt_toolkit-3.0.27.tar.gz", hash = "sha256:f2b6a8067a4fb959d3677d1ed764cc4e63e0f6f565b9a4fc7edc2b18bf80217b"},
 ]
 pycares = [
     {file = "pycares-4.1.2-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:71b99b9e041ae3356b859822c511f286f84c8889ec9ed1fbf6ac30fb4da13e4c"},
@@ -1404,8 +1419,8 @@ six = [
     {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
 ]
 tomli = [
-    {file = "tomli-2.0.0-py3-none-any.whl", hash = "sha256:b5bde28da1fed24b9bd1d4d2b8cba62300bfb4ec9a6187a957e8ddb9434c5224"},
-    {file = "tomli-2.0.0.tar.gz", hash = "sha256:c292c34f58502a1eb2bbb9f5bbc9a5ebc37bee10ffb8c2d6bbdfa8eb13cc14e1"},
+    {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
+    {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
 ]
 typing-extensions = [
     {file = "typing_extensions-4.0.1-py3-none-any.whl", hash = "sha256:7f001e5ac290a0c0401508864c7ec868be4e701886d5b573a9528ed3973d9d3b"},
