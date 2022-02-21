@@ -10,7 +10,7 @@ documentation = "https://graiax.cn"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-graia-ariadne = {extras = ["full"], version = "^0.5.3rc1", allow-prereleases=true}
+graia-ariadne = {extras = ["full"], version = "^0.5.3.post3", allow-prereleases=true}
 graiax-silkcoder = {extras = ["ffmpeg"], version = "^0.1.5"}
 aiohttp = {extras = ["speedups"], version = "^3.8.1"}
 

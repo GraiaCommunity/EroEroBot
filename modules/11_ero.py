@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-第12章 东西要分类好
+第11章 东西要分类好
 """
 
 from graia.ariadne.app import Ariadne
@@ -21,9 +21,10 @@ channel.description("发送涩涩！ | 网易云时间提醒器")
 channel.author("GraiaX")
 
 
-@channel.use(ListenerSchema(listening_events=[GroupMessage]))
-async def ero(app: Ariadne, group: Group, message: MessageChain):
-    await app.sendGroupMessage(group, MessageChain.create(f"不要说{message.asDisplay()}，来点涩图"))
+# 由于下面的代码会造成令人厌烦的复读，因此默认注释
+# @channel.use(ListenerSchema(listening_events=[GroupMessage]))
+# async def ero(app: Ariadne, group: Group, message: MessageChain):
+#     await app.sendGroupMessage(group, MessageChain.create(f"不要说{message.asDisplay()}，来点涩图"))
 
 
 @channel.use(SchedulerSchema(timers.crontabify("0 0 * * *")))
