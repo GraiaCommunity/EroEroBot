@@ -2,7 +2,7 @@
 
 ### 1. 环境要求
 
-虽然 `EroEroBot` 所依赖的 [`Ariadne`](https://github.com/GraiaProject/Ariadne) 框架目前要求的 Python 版本为 3.8 ~ 3.10
+虽然 `EroEroBot` 所依赖的 [`Ariadne`](https://github.com/GraiaProject/Ariadne) 框架目前要求的 Python 版本为 >=3.8
 
 但 `EroEroBot` 仍然建议你使用 Python 3.9 版本进行开发
 
@@ -20,42 +20,11 @@
 
 `EroEroBot` 使用 `Poetry` 来管理项目依赖关系
 
-#### Poetry 官方推荐的安装方法
-
-##### macOS / Linux / BashOnWindows
-
-```bash
-curl -sSL https://install.python-poetry.org | python3 -
-```
-
-##### Windows
-
-> 注：请使用 Windows 8 以上版本的 Windows，并通过 `Windows Powershell` 而不是 `Powershell Core` 执行下面的命令
-
-```powershell
-(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
-```
-
-#### 通过 `pip` 来安装 `Poetry`
-
-假如你没有通过科学的姿势连接网络，上面的命令也许会超时失败  
-因此你也可以直接通过 `pip` 来安装 `Poetry`
-
-> 注：在 Windows 上使用 pip 时请不要设置系统代理，请通过设置镜像源来提升 pip 的下载速度
-
-##### macOS / Linux（此处假设你的 Python 3.9.x 版本的解释器是从源码通过 `make altinstall` 命令安装的）
-
-```bash
-python3.9 -m pip install poetry
-```
-
-##### Windows（请自行确保环境变量中的 Python 解释器版本符合要求）
-
-```powershell
-python -m pip install poetry
-```
+安装步骤清参阅文档：<https://graiax.cn/before/Q&A.html#_6-5-poetry-%E7%9A%84%E5%AE%89%E8%A3%85>
 
 ### 4. 克隆 EroEroBot 到本地并进入项目目录中
+
+> 你也可以不克隆而是从 Releases 中下载预发布模板（但不带任何功能）
 
 ```bash
 git clone https://github.com/Graiax-Community/EroEroBot.git
@@ -75,8 +44,14 @@ poetry install
 
 请不要将以下命令写入 `*.sh`、`*.bat`、`*.cmd`、`*.ps1` 等脚本中使用
 
+以下两条命令任选一条执行，`main-base.py` 对应文档中的前两章（即没有使用 Saya），
+`main-saya.py` 则对应文档第三章及之后的章节（即使用 Saya）
+
+> 有关 Saya 是什么请自行查阅文档：<https://graiax.cn/guide/saya.html>
+
 ```bash
-poetry run python main.py
+poetry run python main-base.py
+poetry run python main-saya.py
 ```
 
 ## 让 EroEroBot 保持在后台运行
