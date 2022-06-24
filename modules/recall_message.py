@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import asyncio
 from pathlib import Path
 
@@ -19,7 +21,7 @@ channel = Channel.current()
         inline_dispatchers=[Twilight.from_command("来张涩图并撤回")],
     )
 )
-async def recall(app: Ariadne, group: Group, message: MessageChain):
-    bot_message = await app.sendGroupMessage(group, MessageChain.create(Image(path=Path("data", "imgs", "graiax.png"))))
+async def recall(app: Ariadne, group: Group):
+    bot_message = await app.send_group_message(group, MessageChain(Image(path=Path("data", "imgs", "graiax.png"))))
     await asyncio.sleep(120)
-    await app.recallMessage(bot_message)
+    await app.recall_message(bot_message)

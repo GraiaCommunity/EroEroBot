@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from pathlib import Path
 
 from graia.ariadne.app import Ariadne
@@ -14,14 +16,14 @@ channel = Channel.current()
 
 @channel.use(ListenerSchema(listening_events=[GroupMessage]))
 async def img(app: Ariadne, group: Group, message: MessageChain):
-    if message.asDisplay().strip() != "来张涩图":
+    if message.display.strip() != "来张涩图":
         return
-    await app.sendMessage(group, MessageChain.create(Image(path=Path("data", "imgs", "graiax.png"))))
+    await app.send_message(group, MessageChain(Image(path=Path("data", "imgs", "graiax.png"))))
 
 
 @channel.use(ListenerSchema(listening_events=[GroupMessage]))
 async def voice(app: Ariadne, group: Group, message: MessageChain):
-    if message.asDisplay().strip() != "要骂骂":
+    if message.display.strip() != "要骂骂":
         return
     voice_bytes = await silkcoder.async_encode(Path("data", "voices", "hentai.mp3"))
-    await app.sendMessage(group, MessageChain.create(Voice(data_bytes=voice_bytes)))
+    await app.send_message(group, MessageChain(Voice(data_bytes=voice_bytes)))

@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import asyncio
 from pathlib import Path
 from typing import Union
@@ -42,15 +44,15 @@ class SetuTagWaiter(Waiter.create([GroupMessage])):
     )
 )
 async def ero1(app: Ariadne, group: Group, member: Member):
-    await app.sendMessage(group, MessageChain.create("你想要什么 tag 的涩图"))
+    await app.send_message(group, MessageChain("你想要什么 tag 的涩图"))
     try:
         ret_msg = await inc.wait(SetuTagWaiter(group, member), timeout=5)  # 强烈建议设置超时时间否则将可能会永远等待
     except asyncio.TimeoutError:
-        await app.sendMessage(group, MessageChain.create("你说话了吗？"))
+        await app.send_message(group, MessageChain("你说话了吗？"))
     else:
-        await app.sendMessage(
+        await app.send_message(
             group,
-            MessageChain.create(
+            MessageChain(
                 Plain("涩图 tag: " + ret_msg.asDisplay()),
                 Image(data_bytes=Path("data", "imgs", "graiax.png").read_bytes()),
             ),
@@ -64,7 +66,7 @@ async def ero1(app: Ariadne, group: Group, member: Member):
 
 @channel.use(ListenerSchema(listening_events=[GroupMessage], decorators=[MatchContent("涩图来2")]))
 async def ero(app: Ariadne, group: Group, member: Member):
-    await app.sendMessage(group, MessageChain.create("你想要什么 tag 的涩图"))
+    await app.send_message(group, MessageChain("你想要什么 tag 的涩图"))
 
     @Waiter.create_using_function([GroupMessage])
     async def setu_tag_waiter(g: Group, m: Member, msg: MessageChain):
@@ -74,11 +76,11 @@ async def ero(app: Ariadne, group: Group, member: Member):
     try:
         ret_msg = await inc.wait(setu_tag_waiter, timeout=5)  # 强烈建议设置超时时间否则将可能会永远等待
     except asyncio.TimeoutError:
-        await app.sendMessage(group, MessageChain.create("你说话了吗？"))
+        await app.send_message(group, MessageChain("你说话了吗？"))
     else:
-        await app.sendMessage(
+        await app.send_message(
             group,
-            MessageChain.create(
+            MessageChain(
                 Plain("涩图 tag: " + ret_msg.asDisplay()),
                 Image(data_bytes=Path("data", "imgs", "graiax.png").read_bytes()),
             ),

@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import random
 from datetime import datetime
 from pathlib import Path
@@ -25,18 +27,18 @@ async def create_forward(app: Ariadne, group: Group, member: Member):
         ForwardNode(
             target=member,
             time=datetime.now(),
-            message=MessageChain.create(Image(path=Path("data", "imgs", "big_milk.jpg"))),
+            message=MessageChain(Image(path=Path("data", "imgs", "big_milk.jpg"))),
         )
     ]
-    member_list = await app.getMemberList(group)
+    member_list = await app.get_member_list(group)
     for _ in range(3):
         random_member: Member = random.choice(member_list)
         fwd_nodeList.append(
             ForwardNode(
                 target=random_member,
                 time=datetime.now(),
-                message=MessageChain.create("好大的奶"),
+                message=MessageChain("好大的奶"),
             )
         )
-    message = MessageChain.create(Forward(nodeList=fwd_nodeList))
-    await app.sendMessage(group, message)
+    message = MessageChain(Forward(nodeList=fwd_nodeList))
+    await app.send_message(group, message)

@@ -10,8 +10,8 @@ documentation = "https://graiax.cn"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-graia-ariadne = {extras = ["standard"], version = "^0.6.13"}
-graiax-silkcoder = {extras = ["ffmpeg"], version = "^0.2.2"}
+graia-ariadne = {extras = ["standard"], version = "^0.7.14"}
+graiax-silkcoder = {extras = ["ffmpeg"], version = "^0.2.8"}
 aiohttp = {extras = ["speedups"], version = "^3.8.1"}
 
 [tool.poetry.dev-dependencies]
@@ -40,8 +40,3 @@ url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
 name = "aliyun"
 default = false
 url = "https://mirrors.aliyun.com/pypi/simple/"
-
-[[tool.poetry.source]]
-name = "tencent-cloud"
-default = false
-url = "https://mirrors.cloud.tencent.com/pypi/simple"
