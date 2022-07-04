@@ -8,7 +8,7 @@ from graia.ariadne.app import Ariadne
 from graia.ariadne.event.message import GroupMessage
 from graia.ariadne.message.chain import MessageChain
 from graia.ariadne.message.element import Forward, ForwardNode, Image
-from graia.ariadne.message.parser.twilight import FullMatch, Twilight
+from graia.ariadne.message.parser.base import MatchContent
 from graia.ariadne.model import Group, Member
 from graia.saya import Channel
 from graia.saya.builtins.broadcast import ListenerSchema
@@ -19,7 +19,7 @@ channel = Channel.current()
 @channel.use(
     ListenerSchema(
         listening_events=[GroupMessage],
-        inline_dispatchers=[Twilight([FullMatch("好大的奶")])],
+        decorators=[MatchContent("好大的奶")],
     )
 )
 async def create_forward(app: Ariadne, group: Group, member: Member):

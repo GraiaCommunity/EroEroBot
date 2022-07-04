@@ -4,7 +4,7 @@ from graia.ariadne.app import Ariadne
 from graia.ariadne.event.message import GroupMessage
 from graia.ariadne.message.element import Face
 from graia.ariadne.message.formatter import Formatter
-from graia.ariadne.message.parser.twilight import Twilight
+from graia.ariadne.message.parser.base import MatchContent
 from graia.ariadne.model import Group
 from graia.saya import Channel
 from graia.saya.builtins.broadcast import ListenerSchema
@@ -15,7 +15,7 @@ channel = Channel.current()
 @channel.use(
     ListenerSchema(
         listening_events=[GroupMessage],
-        inline_dispatchers=[Twilight.from_command("滑稽")],
+        decorators=[MatchContent("滑稽")],
     )
 )
 async def recall(app: Ariadne, group: Group):
