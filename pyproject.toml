@@ -1,27 +1,47 @@
-[tool.poetry]
+[project]
+authors = [
+    {name = "Graiax-Community", email = "example@graiax.cn"},
+]
+requires-python = ">=3.9,<4.0"
+dependencies = [
+    "graia-ariadne[standard]~=0.10",
+    "graiax-silkcoder[ffmpeg]~=0.3",
+    "aiohttp[speedups]~=3.8",
+]
 name = "EroEroBot"
 version = "0.1.0"
 description = "GraiaX 社区文档示例 —— 大家最喜欢的涩图机器人"
-authors = ["Graiax-Community <example@graiax.cn>"]
 readme = "README.md"
-repository = "https://github.com/Graiax-Community/EroEroBot"
+
+[project.urls]
 homepage = "https://graiax.cn"
+repository = "https://github.com/Graiax-Community/EroEroBot"
 documentation = "https://graiax.cn"
 
-[tool.poetry.dependencies]
-python = "^3.9"
-graia-ariadne = {extras = ["standard"], version = "^0.7.15"}
-graiax-silkcoder = {extras = ["ffmpeg"], version = "^0.2.8"}
-aiohttp = {extras = ["speedups"], version = "^3.8.1"}
-
-[tool.poetry.dev-dependencies]
-black = ">=22.6.0"
-isort = { version = ">=5.10.1", extras = ["requirements_deprecated_finder"] }
-flake8 = ">=4.0.1"
-
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool]
+[tool.pdm]
+[tool.pdm.dev-dependencies]
+dev = [
+    "black~=23.1",
+    "isort[requirements_deprecated_finder]~=5.12",
+    "flake8~=6.0",
+]
+
+[tool.pdm.build]
+includes = [
+    "data/",
+    "modules/",
+    "main-*.py",
+]
+
+[[tool.pdm.source]]
+name = "bfsu"
+url = "https://mirrors.bfsu.edu.cn/pypi/web/simple/"
+verify_ssl = true
 
 [tool.black]
 line-length = 120
@@ -30,13 +50,3 @@ safe = true
 
 [tool.isort]
 profile = "black"
-
-[[tool.poetry.source]]
-name = "tuna-tsinghua"
-default = false
-url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
-
-[[tool.poetry.source]]
-name = "aliyun"
-default = false
-url = "https://mirrors.aliyun.com/pypi/simple/"

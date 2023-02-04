@@ -1,84 +1,106 @@
-## 如何部署 EroEroBot
+# EroEroBot
 
-### 1. 环境要求
+## 环境要求
 
-虽然 `EroEroBot` 所依赖的 [`Ariadne`](https://github.com/GraiaProject/Ariadne) 框架目前要求的 Python 版本为 >=3.8
+虽然 `EroEroBot` 的主要依赖 [`Ariadne`](https://github.com/GraiaProject/Ariadne) 框架目前支持 Python 3.8+，但是 `EroEroBot` 使用 Python 3.9 开发，所以请使用 Python 3.9 或更高版本运行本项目。
 
-但 `EroEroBot` 仍然建议你使用 Python 3.9 版本进行开发
+### 下载 Python
 
-> 使用 Python 3.8 可能会存在一些未被发现的 Bug  
-> 而使用 Python 3.10 则可能会存在一些第三方库仍未支持的情况
+[Download Python | Python.org](https://www.python.org/downloads/)
 
-### 2. 配置 Mirai
+### 安装 Python
 
-请参阅[Ariadne官方文档关于mah的配置方法](https://graia.readthedocs.io/appendix/mah-install/)
+[在类 Unix 环境下使用 Python](https://docs.python.org/zh-cn/3/using/unix.html)
 
-### 3. 安装 Poetry
+[在 Windows 上使用 Python](https://docs.python.org/zh-cn/3/using/windows.html)
 
-> 注1：假设你不想用 `Poetry`，你可直接跳过  
-> 注2：此处假设你已在你的计算机或服务器上安装好 Python 3.9 / 3.10
+### 查看 Python 版本
 
-`EroEroBot` 使用 `Poetry` 来管理项目依赖关系
+```bash
+python3 -V
+```
 
-安装步骤清参阅文档：<https://graiax.cn/before/Q&A.html#_6-5-poetry-%E7%9A%84%E5%AE%89%E8%A3%85>
+## 配置 Mirai API HTTP
 
-### 4. 克隆 EroEroBot 到本地并进入项目目录中
+[Mirai API HTTP 安装 - Graia 官方文档](https://graia.cn/ariadne/appendix/mah-install/)
 
-> 你也可以不克隆而是从 Releases 中下载预发布模板（但不带任何功能）
+## 安装 PDM（推荐）
+
+`EroEroBot` 使用 [`PDM`](https://pdm.fming.dev/latest/) 来管理项目
+
+### 通过 install-pdm.py 安装（推荐）
+
+```bash
+# Linux / macOS
+curl -sSL https://raw.githubusercontent.com/pdm-project/pdm/main/install-pdm.py | python3 -
+```
+
+```powershell
+# Windows PowerShell
+(Invoke-WebRequest -Uri https://raw.githubusercontent.com/pdm-project/pdm/main/install-pdm.py -UseBasicParsing).Content | python -
+```
+
+其他安装方式参见：<https://pdm.fming.dev/latest/#installation>
+
+## 下载项目
 
 ```bash
 git clone https://github.com/Graiax-Community/EroEroBot.git
 cd EroEroBot
 ```
 
-### 5. 创建虚拟环境并安装依赖
-
-> 此处假设你所使用的 Python 版本为 3.9
+## 创建虚拟环境并安装依赖
 
 ```bash
-poetry env use 3.9
-poetry install
+pdm install
+
+# # 如果没有安装 PDM：
+# python3 -m venv .venv
+#
+# # Linux / macOS
+# source .venv/bin/activate
+# # Windows
+# .venv\Scripts\Activate.ps1
+#
+# pip install -r requirements.txt
 ```
 
-### 6. 启动 EroEroBot
+## 启动
 
-请不要将以下命令写入 `*.sh`、`*.bat`、`*.cmd`、`*.ps1` 等脚本中使用
-
-以下两条命令任选一条执行，`main-base.py` 对应文档中的前两章（即没有使用 Saya），
-`main-saya.py` 则对应文档第三章及之后的章节（即使用 Saya）
-
-> 有关 Saya 是什么请自行查阅文档：<https://graiax.cn/guide/saya.html>
+以下两条命令任选一条执行。
+`main-base.py` 对应文档中的前两章（没有使用 Saya），`main-saya.py` 对应文档第三章及之后的章节（使用 [Saya](https://graiax.cn/guide/saya.html)）
 
 ```bash
-poetry run python main-base.py
-poetry run python main-saya.py
+pdm run main-base.py
+# #如果没有安装 PDM：
+# python3 main-base.py
+
+pdm run main-saya.py
+# #如果没有安装 PDM：
+# python3 main-saya.py
 ```
 
 ## 让 EroEroBot 保持在后台运行
 
 ### Windows / macOS
 
-~~不会吧不会吧，不会有人连最小化都不会吧~~
+~~不会吧不会吧，不会有人连窗口最小化都不会吧~~
 
-## Linux
+### Linux
 
-### 安装 screen
-
-#### CentOS 等 RPM 系
+#### 安装 screen
 
 ```bash
+# CentOS 等 RPM 系
 sudo yum install repl-release
 sudo yum install screen
-```
 
-#### Ubuntu 等 dpkg 系
-
-```bash
+# Ubuntu 等 dpkg 系
 sudo apt update
 sudo apt install screen
 ```
 
-### 使用 screen
+#### 使用 screen
 
 1. 创建一个 screen
 
@@ -88,7 +110,7 @@ sudo apt install screen
 
 2. 将 screen 放到后台
 
-  > 在 screen 内先按下 `ctrl + a` 组合键，再按下 `d` 键
+    > 在 screen 内先按下 `ctrl + a` 组合键，再按下 `d` 键
 
 3. 将后台的 screen 调出来
 
