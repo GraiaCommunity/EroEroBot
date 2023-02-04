@@ -11,7 +11,7 @@ channel = Channel.current()
 
 @channel.use(ListenerSchema(listening_events=[NudgeEvent]))
 async def getup(app: Ariadne, event: NudgeEvent):
-    if event.context_type == "group":
-        await app.sendGroupMessage(event.group_id, MessageChain.create("你不要光天化日之下在这里戳我啊"))  # type: ignore
-    elif event.context_type == "friend":
-        await app.sendFriendMessage(event.friend_id, MessageChain.create("别戳我，好痒！"))  # type: ignore
+    if event.context_type == "group" and event.group_id is not None:
+        await app.send_group_message(event.group_id, MessageChain("你不要光天化日之下在这里戳我啊"))
+    elif event.context_type == "friend" and event.friend_id is not None:
+        await app.send_friend_message(event.friend_id, MessageChain("别戳我，好痒！"))

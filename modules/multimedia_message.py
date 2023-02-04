@@ -2,6 +2,7 @@
 
 from pathlib import Path
 
+import graiax.silkcoder as silkcoder
 from graia.ariadne.app import Ariadne
 from graia.ariadne.event.message import GroupMessage
 from graia.ariadne.message.chain import MessageChain
@@ -9,7 +10,6 @@ from graia.ariadne.message.element import Image, Voice
 from graia.ariadne.model import Group
 from graia.saya import Channel
 from graia.saya.builtins.broadcast import ListenerSchema
-from graiax import silkcoder
 
 channel = Channel.current()
 
