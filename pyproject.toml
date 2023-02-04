@@ -4,9 +4,9 @@ authors = [
 ]
 requires-python = ">=3.9,<4.0"
 dependencies = [
-    "graia-ariadne[standard]~=0.10",
-    "graiax-silkcoder[ffmpeg]~=0.3",
-    "aiohttp[speedups]~=3.8",
+    "graia-ariadne[standard]>=0.10",
+    "graiax-silkcoder[ffmpeg]",
+    "aiohttp[speedups]",
 ]
 name = "EroEroBot"
 version = "0.1.0"
@@ -19,16 +19,16 @@ repository = "https://github.com/Graiax-Community/EroEroBot"
 documentation = "https://graiax.cn"
 
 [build-system]
-requires = ["pdm-backend"]
-build-backend = "pdm.backend"
+requires = ["pdm-pep517>=1.0.0"]
+build-backend = "pdm.pep517.api"
 
 [tool]
 [tool.pdm]
 [tool.pdm.dev-dependencies]
 dev = [
-    "black~=23.1",
-    "isort[requirements_deprecated_finder]~=5.12",
-    "flake8~=6.0",
+    "black",
+    "isort[requirements_deprecated_finder]",
+    "flake8",
 ]
 
 [tool.pdm.build]
@@ -45,7 +45,7 @@ verify_ssl = true
 
 [tool.black]
 line-length = 120
-target-version = ["py39", "py310"]
+target-version = ["py39"]
 safe = true
 
 [tool.isort]
