@@ -34,12 +34,12 @@ python3 -V
 
 ```bash
 # Linux / macOS
-curl -sSL https://raw.githubusercontent.com/pdm-project/pdm/main/install-pdm.py | python3 -
+curl -sSL https://ghproxy.com/raw.githubusercontent.com/pdm-project/pdm/main/install-pdm.py | python3 -
 ```
 
 ```powershell
 # Windows PowerShell
-(Invoke-WebRequest -Uri https://raw.githubusercontent.com/pdm-project/pdm/main/install-pdm.py -UseBasicParsing).Content | python -
+(Invoke-WebRequest -Uri https://ghproxy.com/raw.githubusercontent.com/pdm-project/pdm/main/install-pdm.py -UseBasicParsing).Content | python -
 ```
 
 其他安装方式参见：<https://pdm.fming.dev/latest/#installation>
