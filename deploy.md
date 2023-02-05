@@ -20,15 +20,17 @@
 python3 -V
 ```
 
+> Windows 系统下请使用`python`代替`python3`，下面其他命令也是。
+
 ## 配置 Mirai API HTTP
 
 [Mirai API HTTP 安装 - Graia 官方文档](https://graia.cn/ariadne/appendix/mah-install/)
 
 ## 安装 PDM（推荐）
 
-`EroEroBot` 使用 [`PDM`](https://pdm.fming.dev/latest/) 来管理项目
+**EroEroBot** 使用 [**PDM**](https://pdm.fming.dev/latest/) 来管理项目
 
-### 通过 install-pdm.py 安装（推荐）
+### 通过 `install-pdm.py` 安装（推荐）
 
 ```bash
 # Linux / macOS
