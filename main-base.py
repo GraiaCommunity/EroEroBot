@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 from creart import create
 from graia.ariadne.app import Ariadne
 from graia.ariadne.connection.config import (
