@@ -45,7 +45,8 @@ class SetuTagWaiter(Waiter.create([GroupMessage])):
 async def ero1(app: Ariadne, group: Group, member: Member):
     await app.send_message(group, MessageChain("你想要什么 tag 的涩图"))
     try:
-        ret_msg: MessageChain = await inc.wait(SetuTagWaiter(group, member), timeout=5)  # 强烈建议设置超时时间否则将可能会永远等待
+        # 强烈建议设置超时时间否则将可能会永远等待
+        ret_msg: MessageChain = await inc.wait(SetuTagWaiter(group, member), timeout=5)
     except asyncio.TimeoutError:
         await app.send_message(group, MessageChain("你说话了吗？"))
     else:
