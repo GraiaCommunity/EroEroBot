@@ -1,12 +1,12 @@
 [project]
 authors = [
-    {name = "Graiax-Community", email = "example@graiax.cn"},
+    {name = "Graia Community", email = "admin@graiax.cn"},
 ]
 requires-python = ">=3.9,<4.0"
 dependencies = [
-    "graia-ariadne[standard]>=0.10",
-    "graiax-silkcoder[ffmpeg]",
-    "aiohttp[speedups]",
+    "graia-ariadne[standard]>=0.11.7",
+    "graiax-silkcoder[ffmpeg]>=0.3.6",
+    "aiohttp[speedups]>=3.8.5",
 ]
 name = "EroEroBot"
 version = "0.1.0"
@@ -19,16 +19,16 @@ repository = "https://github.com/Graiax-Community/EroEroBot"
 documentation = "https://graiax.cn"
 
 [build-system]
-requires = ["pdm-pep517>=1.0.0"]
-build-backend = "pdm.pep517.api"
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
 
 [tool]
 [tool.pdm]
 [tool.pdm.dev-dependencies]
 dev = [
-    "black",
-    "isort[requirements_deprecated_finder]",
-    "flake8",
+    "black>=23.7.0",
+    "isort[requirements_deprecated_finder]>=5.12.0",
+    "flake8>=6.1.0",
 ]
 
 [tool.pdm.build]
@@ -38,15 +38,28 @@ includes = [
     "main-*.py",
 ]
 
-[[tool.pdm.source]]
-name = "bfsu"
-url = "https://mirrors.bfsu.edu.cn/pypi/web/simple/"
-verify_ssl = true
-
 [tool.black]
 line-length = 120
-target-version = ["py39"]
+target-version = ["py39", "py310", "py311"]
 safe = true
 
 [tool.isort]
 profile = "black"
+
+[tool.ruff]
+line-length = 120
+target-version = "py39"
+select = [
+    # https://beta.ruff.rs/docs/rules
+    "E",  # pycodestyle
+    "F",  # pyflakes
+    "UP", # pyupgrade
+    "I",  # isort
+    # "D",  # pydocstyle
+    "ASYNC", # flake8-async
+]
+exclude = [".git", ".venv", "__pypackages__", "dist"]
+ignore = ["F401"]
+
+[tool.ruff.pydocstyle]
+convention = "google"
